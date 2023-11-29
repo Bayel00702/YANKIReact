@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import {Route, Routes} from "react-router-dom";
+import Layout from "./Layout/Layout";
+import Home from "./pages/Home/Home";
+import Catalog from "./pages/Catalog/Catalog";
+import Contact from "./pages/Contackts/Contact";
+import Favorits from "./pages/Favorits/Favorits";
+import Order from "./pages/Order/Order";
+import Profile from "./pages/Profile/Profile";
+import Backet from "./pages/bascket/Backet";
+import LogIn from "./pages/LogIn/LogIn";
+import Register from "./pages/Register/Register";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route  path='/' element={<Layout/>}>
+          <Route path='' element={<Home/>}/>
+          <Route path='catalog' element={<Catalog/>}/>
+          <Route path='contact' element={<Contact/>}/>
+          <Route path='favorites' element={<Favorits/>}/>
+          <Route path='order' element={<Order/>}/>
+          <Route path='profile' element={<Profile/>}/>
+          <Route path='basket' element={<Backet/>}/>
+        </Route>
+        <Route path='login' element={<LogIn/>}/>
+        <Route path='register' element={<Register/>}/>
+      </Routes>
+
+
+    </>
   );
 }
 
